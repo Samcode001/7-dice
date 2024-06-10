@@ -47,7 +47,7 @@ export default function SignIn() {
     // const data = new FormData(event.currentTarget);
     // console.log(userData.username, userData.password);
     try {
-      const { data } = await axios.post("http://localhost:3000/user/signup", {
+      const { data } = await axios.post("https://7-dice.vercel.app/user/signup", {
         username: userData.username,
         password: userData.password,
       });

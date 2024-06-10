@@ -37,7 +37,7 @@ const GamePage = () => {
 
       const {
         data: { generatedNumber },
-      } = await axios.get("http://localhost:3000/game/generateNumber", {
+      } = await axios.get("https://7-dice.vercel.app/game/generateNumber", {
         headers: {
           authorization: "Bearer " + token,
         },
@@ -45,7 +45,7 @@ const GamePage = () => {
       // console.log(generatedNumber);
 
       const { data } = await axios.post(
-        "http://localhost:3000/game/userResult",
+        "https://7-dice.vercel.app/game/userResult",
         {
           generatedNumber,
           betNumber: selectedOptions.bet,
@@ -73,7 +73,7 @@ const GamePage = () => {
       const {
         data: { newPoints },
       } = await axios.post(
-        "http://localhost:3000/game/setPoints",
+        "https://7-dice.vercel.app/game/setPoints",
         {
           userResult: result,
           betPoints: selectedOptions.betPoints,
@@ -95,7 +95,7 @@ const GamePage = () => {
 
   const getPoints = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/game/getPoints", {
+      const { data } = await axios.get("https://7-dice.vercel.app/game/getPoints", {
         headers: {
           authorization: "Bearer " + localStorage.getItem("token"),
         },
